@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <div class="background-img">
+    <!-- <img src="assets/images/login-bg.jpg" id="sky-bg"> -->
+    <form id="form1">
+      <h1>Login</h1>
+      <input placeholder="Email" type="email" id="email" required="">
+      <input placeholder="Password" type="password" id="password" required="">
+      <button type="submit" placeholder="submit" id="submit">Submit</button>
+    </form>
+  </div>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { createUserWithEmailAndPassword, signInWithEmailAndPassword, getAuth } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBcFKf8OOh4-OR19UL_uv7KRlbIgp_RAI4",
+      authDomain: "mindx-final.firebaseapp.com",
+      projectId: "mindx-final",
+      storageBucket: "mindx-final.appspot.com",
+      messagingSenderId: "984896482907",
+      appId: "1:984896482907:web:d5cf84b8c4b2529d04197e",
+      measurementId: "G-51ER9TLB39"
+    };
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+
+    const form = document.getElementById("form1")
+    const emailInput = document.getElementById('email')
+    const passwordInput = document.getElementById("password")
+
+
+
+
+
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault()
+
+      const email = emailInput.value
+      const password = passwordInput.value
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user)
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage, errorCode)
+        });
+    })
+
+  </script>
+</body>
+
+</html>

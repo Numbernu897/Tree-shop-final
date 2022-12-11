@@ -101,6 +101,19 @@ a.header-text{
   font-weight:700;
 }
 
+@media only screen and (min-width: 28px) and (max-width: 991px){
+  a.bottom-text{
+    color:white;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translate(-100%, -100%);
+    padding-top:300px;
+    font-size:17px;
+    font-weight:150;
+    margin-top:20px;
+  }
+}
 a.bottom-text{
   color:white;
   position: absolute;
@@ -467,13 +480,25 @@ p {
     padding: 10px 0;
   }
 }
-.navbar-area.navbar-nine .navbar-brand {
+.navbar-area.navbar-nine .navlogo {
   align-items:center;
-  width:30px;
-  height:30px;
+  width:70%;
+  height:70%;
   margin: 0;
   align-items:center;
 }
+
+.navbar-brand .navlogo {
+  display: grid;
+}
+
+.navbar-brand .navlogo {
+ height:1000%;
+ width:1000%;
+ align-self: center;
+ justify-self: center;
+}
+
 .navbar-area.navbar-nine .navbar {
   position: relative;
   padding: 0;
@@ -491,6 +516,11 @@ p {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
+
+.navbar-area.navbar-nine .auth{
+  position: relative;
+  left:50%;
+}
 .navbar-area.navbar-nine .navbar .navbar-toggler.active .toggler-icon:nth-of-type(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -499,6 +529,7 @@ p {
   transform: rotate(45deg);
   top: 7px;
 }
+
 .navbar-area.navbar-nine .navbar .navbar-toggler.active .toggler-icon:nth-of-type(2) {
   opacity: 0;
 }
@@ -1069,6 +1100,10 @@ p {
     padding-bottom:60px;
   }
 }
+.christmas-img{
+  border:1px white solid;
+  padding:5px;
+}
 .about-five-content{
   padding-left: 50px;
 }
@@ -1228,9 +1263,11 @@ p {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.services-eight .single-services:hover {
+.services-eight .single-services:hover{
   box-shadow: var(--shadow-4);
 }
+
+
 .services-eight .single-services:hover .service-icon {
   color: var(--white);
   border-color: transparent;
@@ -1239,6 +1276,7 @@ p {
 .services-eight .single-services:hover .service-icon::after {
   opacity: 1;
   visibility: visible;
+  opacity:0%;
 }
 .services-eight .single-services .service-icon {
   width: 78px;
@@ -1259,6 +1297,24 @@ p {
   transition: all 0.3s ease-out 0s;
   position: relative;
 }
+
+.services-eight .single-services .service-icon .icon-after{
+  position:absolute;
+  opacity:0%;
+}
+
+.services-eight .single-services:hover .icon-before{
+  opacity:0%;
+  transition: all 0.3s ease-out 0s;
+}
+
+.services-eight .single-services:hover .icon-after{
+  opacity:100%;
+  transition: all 0.3s ease-out 0s;
+}
+
+
+
 .services-eight .single-services .service-icon::after {
   content: "";
   width: 100%;
@@ -1289,81 +1345,6 @@ p {
   color: var(--primary-medium-light);
 }
 
-
-
-/*===== VIDEO ONE =====*/
-.video-one {
-  background-color: var(--light-3);
-  padding: 100px 0;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .video-one {
-    padding: 80px;
-  }
-}
-@media (max-width: 767px) {
-  .video-one {
-    padding: 60px 0;
-  }
-}
-.video-one .video-title h5 {
-  font-weight: 600;
-  color: var(--primary);
-}
-.video-one .video-title h2 {
-  font-weight: 700;
-  color: var(--black);
-  margin-top: 10px;
-}
-.video-one .video-title .text-lg {
-  margin-top: 24px;
-  color: var(--dark-3);
-}
-.video-one .video-content {
-  position: relative;
-  margin-top: 20px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.video-one .video-content img {
-  border-radius: 8px;
-}
-.video-one .video-content a {
-  width: 88px;
-  height: 88px;
-  line-height: 88px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: var(--white);
-  font-size: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-  padding-left: 3px;
-}
-@media (max-width: 767px) {
-  .video-one .video-content a {
-    width: 68px;
-    height: 68px;
-    line-height: 68px;
-    font-size: 20px;
-  }
-}
-.video-one .video-content a:hover {
-  background-color: var(--white);
-  color: var(--primary);
-}
 
 
 
